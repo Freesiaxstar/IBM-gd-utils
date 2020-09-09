@@ -1,4 +1,3 @@
-
 # This workflow will build a docker container, publish it to IBM Container Registry, and deploy it to IKS when a release is created
 #
 # To configure this workflow:
