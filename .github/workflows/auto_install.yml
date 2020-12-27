@@ -32,6 +32,9 @@ jobs:
         sed -i "s/bot_token/${{ secrets.TG_TOKEN }}/g" ${GITHUB_WORKSPACE}/gd-utils/config.js
         sed -i "s/PARALLEL_LIMIT = 20/PARALLEL_LIMIT = 200/g" ${GITHUB_WORKSPACE}/gd-utils/config.js 
         sed -i "s/your_tg_username/${{ secrets.TG_USERNAME }}/g" ${GITHUB_WORKSPACE}/gd-utils/config.js
+        sed -i "s/your_client_id/"${{ secrets.YOUR_CLIENT_ID }}",/g" ${GITHUB_WORKSPACE}/gd-utils/config.js
+        sed -i "s/your_client_secret/"${{ secrets.YOUR_CLIENT_SECRET }}",/g" ${GITHUB_WORKSPACE}/gd-utils/config.js
+        sed -i "s/your_refrest_token/"${{ secrets.YOUR_REFREST_TOKEN }}",/g" ${GITHUB_WORKSPACE}/gd-utils/config.js
         sed -i "s/DEFAULT_TARGET = ''/DEFAULT_TARGET = '${{ secrets.DRIVE_ID }}'/g" ${GITHUB_WORKSPACE}/gd-utils/config.js
         sed -i "s/23333/8080/g" ${GITHUB_WORKSPACE}/gd-utils/server.js
         sed -i "s@https_proxy='http://127.0.0.1:1086' nodemon@pm2-runtime start@g" ${GITHUB_WORKSPACE}/gd-utils/package.json
